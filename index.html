@@ -6,53 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Nota</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
     <style>
-        input {
-            margin: 0.5em;
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
         }
 
         fieldset {
             background-color: lightsteelblue;
+            border-radius: 5px;
+            border: 0;
+            margin: 0.5em;
+            max-width: 20em;
+        }
+
+        legend {
+            background-color: lightsteelblue;
+            border-radius: 5px;
+            font-weight: 500;
+            padding: 0.25em;
+        }
+
+        input {
+            border: 0;
+            margin-bottom: 0.5em;
+            width: calc(100% - 7.175em);
+        }
+
+
+        label {
+            display: inline-block;
+            min-width: 6em;
+        }
+
+        button {
+            border-radius: 5px;
+            border: 0;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <form>
-        <fieldset>
-            <div>
-                <label for="parcialito1">Parcialito 1</label>
-                <input type="number" min="0" max="100" name="parcialito1" id="parcialito1" onchange="calcular()">
-            </div>
-            <div>
-                <label for="parcial1">Parcial 1</label>
-                <input type="number" min="0" max="100" name="parcial1" id="parcial1" onchange="calcular()">
-            </div>
-            <div>
-                <label for="parcialito2">Parcialito 2</label>
-                <input type="number" min="0" max="100" name="parcialito2" id="parcialito2" onchange="calcular()">
-            </div>
-            <div>
-                <label for="parcial2">Parcial 2</label>
-                <input type="number" min="0" max="100" name="parcial2" id="parcial2" onchange="calcular()">
-            </div>
-            <button onclick="calcular()">Calcular</button>
-        </fieldset>
-    </form>
-    <dl>
+    <fieldset>
+        <legend>Notas</legend>
+        <div>
+            <label for="parcialito1">Parcialito 1</label>
+            <input type="number" min="0" max="100" name="parcialito1" id="parcialito1" onchange="calcular()" />
+        </div>
+        <div>
+            <label for="parcial1">Parcial 1</label>
+            <input type="number" min="0" max="100" name="parcial1" id="parcial1" onchange="calcular()" />
+        </div>
+        <div>
+            <label for="parcialito2">Parcialito 2</label>
+            <input type="number" min="0" max="100" name="parcialito2" id="parcialito2" onchange="calcular()" />
+        </div>
+        <div>
+            <label for="parcial2">Parcial 2</label>
+            <input type="number" min="0" max="100" name="parcial2" id="parcial2" onchange="calcular()" />
+        </div>
+        <button onclick="calcular()">Calcular</button>
+    </fieldset>
+    <fieldset>
+        <legend>Resultados</legend>
         <div>
             <label for="nota1">Nota 1</label>
-            <input id="nota1" disabled></dd>
+            <input id="nota1" disabled />
         </div>
         <div>
             <label for="nota2">Nota 2</label>
-            <input id="nota2" disabled></dd>
+            <input id="nota2" disabled />
         </div>
         <div>
             <label for="resultado">Resultado</label>
-            <input id="resultado" disabled></dd>
+            <input id="resultado" disabled />
         </div>
-    </dl>
+    </fieldset>
 </body>
 <script>
     function final(nota1, nota2) {
