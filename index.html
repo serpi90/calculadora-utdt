@@ -56,16 +56,16 @@
     <fieldset>
         <legend>Notas</legend>
         <div>
-            <label for="parcialito1">Parcialito 1</label>
-            <input type="number" min="0" max="100" name="parcialito1" id="parcialito1" onchange="calcular()" />
+            <label for="ejercicio1">Ejercicio con nota № 1</label>
+            <input type="number" min="0" max="100" name="ejercicio1" id="ejercicio1" onchange="calcular()" />
         </div>
         <div>
             <label for="parcial1">Parcial 1</label>
             <input type="number" min="0" max="100" name="parcial1" id="parcial1" onchange="calcular()" />
         </div>
         <div>
-            <label for="parcialito2">Parcialito 2</label>
-            <input type="number" min="0" max="100" name="parcialito2" id="parcialito2" onchange="calcular()" />
+            <label for="ejercicio2">Ejercicio con nota № 2</label>
+            <input type="number" min="0" max="100" name="ejercicio2" id="ejercicio2" onchange="calcular()" />
         </div>
         <div>
             <label for="parcial2">Parcial 2</label>
@@ -101,18 +101,18 @@
         else return "Rinde Final"
     }
 
-    function nota(parcialito, parcial) {
-        return parcialito * 0.2 + parcial * 0.8;
+    function nota(ejercicio, parcial) {
+        return ejercicio * 0.2 + parcial * 0.8;
     }
 
     function calcular() {
         const parcial1 = document.getElementById("parcial1").value;
         const parcial2 = document.getElementById("parcial2").value;
-        const parcialito1 = document.getElementById("parcialito1").value;
-        const parcialito2 = document.getElementById("parcialito2").value;
+        const ejercicio1 = document.getElementById("ejercicio1").value;
+        const ejercicio2 = document.getElementById("ejercicio2").value;
 
-        const n1 = nota(parcialito1, parcial1);
-        const n2 = nota(parcialito2, parcial2);
+        const n1 = nota(ejercicio1, parcial1);
+        const n2 = nota(ejercicio2, parcial2);
         const resultado = final(n1, n2);
         document.getElementById("nota1").value = n1;
         document.getElementById("nota2").value = n2;
